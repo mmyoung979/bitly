@@ -23,6 +23,7 @@ def get_user_group(access_token: str, headers: dict) -> str:
 
     Args:
         access_token: Bearer token from Bitly
+        headers: request headers with bearer token authorization
 
     Returns:
         Default user group

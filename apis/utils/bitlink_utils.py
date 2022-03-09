@@ -1,6 +1,7 @@
 # Third party imports
 import requests
 
+
 # Get data from API request
 def get_bitlinks_by_group(group: str, page: int, headers: dict) -> dict:
     """Return a list of 50 bitlinks belonging to a group

@@ -1,6 +1,7 @@
 # Third party imports
 import requests
 
+
 # Get data from API request
 def get_clicks_by_country(bitlink: str, headers: dict) -> dict:
     """Provides the number of user clicks, broken down by country, for a provided Bitlink
