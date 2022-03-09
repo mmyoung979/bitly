@@ -38,7 +38,10 @@ class AverageClicksByCountry(Resource):
 
         # Iterate through pages of links
         while page <= num_of_pages:
-            bitlinks = get_bitlinks_by_group(group, page, headers)
+
+            # Don't send a duplicate request for first page
+            if page != 1:
+                bitlinks = get_bitlinks_by_group(group, page, headers)
 
             # Get total number of clicks per link
             for bitlink in bitlinks["links"]:
