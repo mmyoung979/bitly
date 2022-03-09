@@ -29,7 +29,6 @@ class AverageClicksByCountry(Resource):
         # Get bitlinks associated with group
         page = 1
         bitlinks = get_bitlinks_by_group(group, page, headers)
-        print(f"\nBITLINKS\n{bitlinks}\n")
         size = bitlinks["pagination"]["size"]
         num_of_pages = ceil(bitlinks["pagination"]["total"] / size)
 
@@ -40,13 +39,11 @@ class AverageClicksByCountry(Resource):
         # Iterate through pages of links
         while page <= num_of_pages:
             bitlinks = get_bitlinks_by_group(group, page, headers)
-            print(f"\nBITLINKS\n{bitlinks}\n")
 
             # Get total number of clicks per link
             for bitlink in bitlinks["links"]:
 
                 # Ignore http:// and https://
-                print(f"\nBITLINK\n{bitlink}\n")
                 link = bitlink["link"].split("://")[1]
 
                 # Retrieve and parse API data
